@@ -33,10 +33,10 @@
   --font-body:'Montserrat',sans-serif;
   --font-script:'Ms Madi',cursive;
 
-  --header-h:88px;
-  --header-h-scrolled:68px;
-  --header-pad-top:14px;
-  --header-pad-top-scrolled:6px;
+  --header-h:78px;
+  --header-h-scrolled:62px;
+  --header-pad-top:8px;
+  --header-pad-top-scrolled:4px;
 
   --radius-lg:28px;
   --radius-md:18px;
@@ -199,7 +199,7 @@ section{position:relative;}
   align-items:center;
   justify-content:space-between;
   gap:24px;
-  padding-bottom:10px;
+  padding-bottom:6px;
   transition:padding-bottom .4s var(--ease);
 }
 .site-header.is-scrolled .header-top{ padding-bottom:6px; }
@@ -246,8 +246,8 @@ section{position:relative;}
   flex-wrap:wrap;
   gap:2px 4px;
   width:100%;
-  padding-top:8px;
-  padding-bottom:12px;
+  padding-top:5px;
+  padding-bottom:8px;
   border-top:1px solid rgba(212,63,141,.09);
   transition:padding .4s var(--ease), border-color .4s var(--ease);
 }
@@ -401,7 +401,7 @@ section{position:relative;}
   position:relative;
   z-index:2;
   width:100%;
-  padding:0 24px 96px;
+  padding:56px 24px 96px;
   max-width:1240px;
   margin:0 auto;
   color:var(--white);
@@ -1529,7 +1529,7 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/SEU_ENDPOINT"; // substitua p
    DADOS — separados dos componentes para fácil edição
 ============================================================ */
 const heroSlides = [
-  { tag:"Bem-vindo(a)", title:"Força, fé e esperança para quem enfrenta o câncer", desc:"[INSERIR DESCRIÇÃO] Uma rede de apoio construída por pessoas que acreditam no cuidado coletivo.", cta:"Conheça nosso trabalho", href:"#trabalho", img:"" },
+  { tag:"", title:"Força, fé e esperança para quem enfrenta o câncer", desc:"[INSERIR DESCRIÇÃO] Uma rede de apoio construída por pessoas que acreditam no cuidado coletivo.", cta:"Conheça nosso trabalho", href:"#trabalho", img:"" },
   { tag:"Nossa missão", title:"Cuidado que caminha ao lado de quem precisa", desc:"[INSERIR DESCRIÇÃO] Apoiamos pacientes e famílias em cada etapa do tratamento.", cta:"Nossa história", href:"#historia", img:"assets/banner 2.png" },
   { tag:"Participe", title:"Cada gesto de solidariedade fortalece a Rede", desc:"[INSERIR DESCRIÇÃO] Seja voluntário, doador ou parceiro da nossa causa.", cta:"Junte-se a nós", href:"#junte-se", img:"assets/banner" },
   { tag:"Eventos", title:"Encontros que sustentam nosso cuidado", desc:"[INSERIR DESCRIÇÃO] Conheça os eventos que já realizamos e os que estão por vir.", cta:"Ver eventos", href:"#eventos", img:"" },
@@ -1749,7 +1749,7 @@ heroSlides.forEach((s, i)=>{
   slide.innerHTML = `
     <div class="hero-slide-media"${s.img ? ` style="background-image:linear-gradient(0deg, rgba(43,11,54,.65) 0%, rgba(43,11,54,.1) 55%, rgba(212,63,141,.3) 100%), url('${escapeHtml(s.img)}');background-size:cover;background-position:center;"` : ''}></div>
     <div class="hero-slide-content">
-      <span class="tag">${escapeHtml(s.tag)}</span>
+      ${s.tag ? `<span class="tag">${escapeHtml(s.tag)}</span>` : ""}
       <h2>${escapeHtml(s.title)}</h2>
       <p>${escapeHtml(s.desc)}</p>
       <a href="${s.href}" class="btn btn-light">${escapeHtml(s.cta)}</a>
